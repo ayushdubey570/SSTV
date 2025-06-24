@@ -11,7 +11,7 @@ This project simulates **Slow Scan Television (SSTV)** to **encode images into a
 - ✅ Encode full-color images to SSTV `.wav` files (Martin M1 simulation)
 - ✅ Decode `.wav` audio files back into color images
 - ✅ NEW: 🎙️ Live microphone decoding — play audio from another device and decode in real time
-- ✅ Streamlit-based GUI — beginner-friendly and easy to demo
+- ✅ Streamlit-based GUI — beginner-friendly and easy to 
 - ✅ Zero-cost, 100% Python project — no SDR hardware needed
 
 ---
