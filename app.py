@@ -4,7 +4,7 @@ import numpy as np
 import scipy.io.wavfile as wav
 import tempfile
 import os
-import sounddevice as sd
+#import sounddevice as sd----> it is noot supported by streamlit cloud
 import queue
 import threading
 from io import BytesIO
