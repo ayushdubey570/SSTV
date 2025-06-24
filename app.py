@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import cv2
+#import cv2 - it is not supported by streamlit cloud, you can keep it while running locally
 import scipy.io.wavfile as wav
 import tempfile
 import os
@@ -127,24 +127,14 @@ if option == "Encode Image to SSTV":
         with open(wav_path, "rb") as file:
             st.download_button("Download SSTV .wav", file, file_name="sstv_color_output.wav")
 
-elif option == "Decode SSTV from File":
-    uploaded_audio = st.file_uploader("Upload SSTV .wav File", type=["wav"])
-    if uploaded_audio is not None:
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp:
-            temp.write(uploaded_audio.read())
-            img_path = sstv_wav_to_image(temp.name)
-
+#elif option == "Decode SSTV from File":
+#    uploaded_audio = st.file_uploader("Upload SSTV .wav File", type=["wav"])
+#    if uploaded_audio is not None:
+#        with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp:
+#            temp.write(uploaded_audio.read())
+#            img_path = sstv_wav_to_image(temp.name)
+#keep these files while running locally-----> as it is not supported by streamlit cloud
         st.image(img_path, caption="Decoded Color Image")
         st.success("Color Image Decoded from SSTV Audio!")
         with open(img_path, "rb") as file:
             st.download_button("Download Decoded Image", file, file_name="decoded_color_image.png")
-
-elif option == "Decode SSTV Live (Mic)":
-    duration = st.slider("Recording Duration (seconds)", min_value=5, max_value=30, value=10)
-    if st.button("Start Recording"):
-        st.info("Recording from microphone... Speak now or play SSTV sound!")
-        wav_path = record_audio(duration)
-        img_path = sstv_wav_to_image(wav_path)
-        st.image(img_path, caption="Live Decoded Color Image")
-        with open(img_path, "rb") as file:
-            st.download_button("Download Decoded Image", file, file_name="live_decoded_image.png")
