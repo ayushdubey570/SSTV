@@ -42,7 +42,7 @@ sstv-python/
 
 1. **Clone the repo**:
 ```bash
-git clone https://github.com/your-username/sstv-python.git
+git clone https://github.com/ayushdubey570/sstv.git
 cd sstv-python
 ```
 
