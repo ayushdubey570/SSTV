@@ -43,7 +43,7 @@ sstv-python/
 1. **Clone the repo**:
 ```bash
 git clone https://github.com/ayushdubey570/sstv.git
-cd sstv-python
+cd sstv
 ```
 
 2. **Install requirements**:
